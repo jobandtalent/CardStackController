@@ -5,6 +5,16 @@ iOS custom controller used in the [Jobandtalent app](https://itunes.apple.com/ap
 
 This controller behaves very similar to `UINavigationController`, maintaining a stack of ViewControllers. The presentation of new view controllers is different though. New view controllers are presented as a new “Card” in front of the current context. The next GIFs show the control in action.
 
+Gif from the example project supplied:
+
+![](https://github.com/jobandtalent/CardStackController/blob/master/Assets/cards.gif?raw=true)
+
+
+Gif from the Jobandtalent app:
+
+![](https://github.com/jobandtalent/CardStackController/blob/master/Assets/cards-app.gif?raw=true)
+
+
 ## Installation
 Use Cocoapods to install this custom control in your project.
 
