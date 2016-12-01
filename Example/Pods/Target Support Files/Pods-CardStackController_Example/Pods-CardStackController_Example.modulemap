@@ -1,0 +1,6 @@
+framework module Pods_CardStackController_Example {
+  umbrella header "Pods-CardStackController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

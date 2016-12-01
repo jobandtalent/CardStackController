@@ -1,0 +1,6 @@
+framework module Reveal {
+  umbrella header "Reveal-umbrella.h"
+
+  export *
+  module * { export * }
+}

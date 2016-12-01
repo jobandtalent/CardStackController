@@ -1,0 +1,19 @@
+PODS:
+  - CardStackController (0.1.0)
+  - Reveal (1.3.9)
+
+DEPENDENCIES:
+  - CardStackController (from `../`)
+  - Reveal
+
+EXTERNAL SOURCES:
+  CardStackController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CardStackController: 3bfea12416829a2e289024a69c8bd5be20382e83
+  Reveal: 3b9f8036a9db997c28c35094120a1fe6b23469f2
+
+PODFILE CHECKSUM: 1934c441ed0255a793750bbccdf61ab808fbb0f8
+
+COCOAPODS: 1.1.1
