@@ -24,7 +24,7 @@ pod ‘CardStackController’, '~> 0.1.0’
 
 ## Usage
 Use the main and only public class `CardStackController` to present or stack new view controllers.
-After creating and configuring `CardStackController`, present it modally (it doesn’t need to be animated). Once the controller itself is presented, you can start stacking cards by calling `stack(ViewController:)` method.
+After creating and configuring `CardStackController`, present it modally (it doesn’t need to be animated). Once the controller itself is presented, you can start stacking cards by calling `stack(viewController:)` method.
 
 Example of usage:
 
@@ -44,7 +44,7 @@ cardStackController.stack(viewController: root)
 
 
 This control is highly customisable and contains many features, among the ones we highlight:
-- The user can dismiss cards by dragging them down
+- The user can dismiss cards by dragging them down.
 - It is possible to tune the `damping` and `frequency` values of the presenting animation to achieve all kinds of animation curves.
 - It is possible to customise the top distance between cards, the amount each card gets resized, the size of each card… 
 - There are many convenient methods to unstack cards: `unstackAll`, `unstackUntilRoot`, `unstackLast`, etc.
