@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         cardStackController.firstCardTopOffset = CGFloat(secondSlider.value)
         cardStackController.topOffsetBetweenCards = CGFloat(thirdSlider.value)
         cardStackController.verticalTranslation = CGFloat(fourthSlider.value)
-        cardStackController.automaticallyDismiss = false
         present(cardStackController, animated: false, completion: nil)
 
         let root = newController()
