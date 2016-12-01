@@ -1,55 +1,48 @@
-# CardStackController
-
-[![CI Status](http://img.shields.io/travis/Victor Baro/CardStackController.svg?style=flat)](https://travis-ci.org/Victor Baro/CardStackController)
-[![Version](https://img.shields.io/cocoapods/v/CardStackController.svg?style=flat)](http://cocoapods.org/pods/CardStackController)
-[![License](https://img.shields.io/cocoapods/l/CardStackController.svg?style=flat)](http://cocoapods.org/pods/CardStackController)
-[![Platform](https://img.shields.io/cocoapods/p/CardStackController.svg?style=flat)](http://cocoapods.org/pods/CardStackController)
-
-
 ![](https://github.com/jobandtalent/AnimatedTextInput/blob/master/Assets/Jobandtalent%20Eng.png)
 
-iOS custom view controllercomponent used in [Jobandtalent app](https://itunes.apple.com/app/id665060895).
-CardStackController allows you to present any number of ViewControllers, one on top of another, using a card stack arrengement. The controller uses a very simple API (based on `UINavigationController`).
+# CardStackController
+iOS custom controller used in the [Jobandtalent app](https://itunes.apple.com/app/id665060895) to present new view controllers as cards.
 
-![](https://github.com/jobandtalent/AnimatedTextInput/blob/master/Assets/general.gif)
+This controller behaves very similar to `UINavigationController`, maintaining a stack of ViewControllers. The presentation of new view controllers is different though. New view controllers are presented as a new “Card” in front of the current context. The next GIFs show the control in action.
 
 ## Installation
-Use cocoapods to install this custom control in your project.
+Use Cocoapods to install this custom control in your project.
 
 ```
-pod 'CardStackController', '~> 0.0.1'
+pod ‘CardStackController’, '~> 0.1.0’
 ```
-
-Full `Swift 3.0` support -> Thanks to @poolqf
 
 ## Usage
+Use the main and only public class `CardStackController` to present or stack new view controllers.
+After creating and configuring `CardStackController`, present it modally (it doesn’t need to be animated). Once the controller itself is presented, you can start stacking cards by calling `stack(ViewController:)` method.
 
-Use the main (and only) class `CardStackController`. The API was designed to be very similar to a UINavigationController.
-
-The best way to initialize this control is by using `init(rootViewController:)`. If you initialize it without a root view controller, the first ViewController you stack will become the rootViewController.
+Example of usage:
 
 ```swift
-//Option 1
-cardStackController = CardStackController(rootViewController: rootController)
-// No need to call stack(viewController:), will be presented automatically
-presentViewController(cardStackController, animated: false, completion: nil)
+cardStackController.delegate = self
+cardStackController.cardScaleFactor = CGFloat(firstSlider.value)
+cardStackController.firstCardTopOffset = CGFloat(secondSlider.value)
+cardStackController.topOffsetBetweenCards = CGFloat(thirdSlider.value)
+cardStackController.verticalTranslation = CGFloat(fourthSlider.value)
+cardStackController.automaticallyDismiss = false
+present(cardStackController, animated: false, completion: nil)
 
-
-//Option 2
-cardStackController = CardStackController()
-//Additional setup
-presentViewController(cardStackController, animated: false, completion: nil)
-//Calling stack(viewController:) is necessary
-cardStackController.stack(viewController: rootController)
-
+let root = newController()
+root.delegate = self
+cardStackController.stack(viewController: root)
 ```
 
 
-To present a new card, just call `stack()`
+This control is highly customisable and contains many features, among the ones we highlight:
+- The user can dismiss cards by dragging them down
+- It is possible to tune the `damping` and `frequency` values of the presenting animation to achieve all kinds of animation curves.
+- It is possible to customise the top distance between cards, the amount each card gets resized, the size of each card… 
+- There are many convenient methods to unstack cards: `unstackAll`, `unstackUntilRoot`, `unstackLast`, etc.
 
-Example:
+
+## Under the hood
+`CardStackController` uses `UIKit Dynamics` to present or stack cards. It creates an attachment behaviour between a card and a fix point on the screen. To prevent the card moving sideways, there is a collision behaviour between each card and the borders of the screen. Finally, there is a DynamicItem behaviour for each card to prevent rotation (this behaviour could also be used to apply density/friction/etc to them, but we didn’t find it necessary).
 
 
-## License
 
 CardStackController is available under the MIT license. See the LICENSE file for more info.
