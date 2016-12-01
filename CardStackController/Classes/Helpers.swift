@@ -1,4 +1,4 @@
-func drawWindowHierarchy(afterScreenUpdates afterScreenUpdates: Bool) -> UIImage? {
+func drawWindowHierarchy(afterScreenUpdates: Bool) -> UIImage? {
     guard let window = UIApplication.shared.keyWindow else { return nil }
     UIGraphicsBeginImageContextWithOptions(window.bounds.size, false, 0)
     window.drawHierarchy(in: window.bounds, afterScreenUpdates: afterScreenUpdates)

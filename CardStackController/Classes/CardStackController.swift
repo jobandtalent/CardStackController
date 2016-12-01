@@ -378,7 +378,6 @@ public class CardStackController: UIViewController {
             let currentDimView = panningView.superview else { return }
 
         let panLocationInView = sender.location(in: view)
-        let panLocationInCardView = sender.location(in: panningView)
         let defaultAnchorPointX = currentAttachmentBehaviour.anchorPoint.x
         let defaultAnchorPointY = self.view.frame.maxY - panningView.bounds.midY
 
