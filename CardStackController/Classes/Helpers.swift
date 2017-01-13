@@ -1,3 +1,5 @@
+import UIKit
+
 func drawWindowHierarchy(afterScreenUpdates: Bool) -> UIImage? {
     guard let window = UIApplication.shared.keyWindow else { return nil }
     UIGraphicsBeginImageContextWithOptions(window.bounds.size, false, 0)
