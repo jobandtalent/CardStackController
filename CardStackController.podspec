@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   DESC
 
   s.homepage     = "https://github.com/jobandtalent/CardStackController"
-  s.license      = { :type => 'MIT', :file => 'LICENSE' }
+  s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.author       = { 'Victor Baro' => 'fs.baro@gmail.com' }
   s.source       = { :git => "https://github.com/jobandtalent/CardStackController.git", :tag => "#{s.version}" }
   s.ios.deployment_target = '8.0'
