@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CardStackController"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "Custom controller that presents new ViewControllers as cards. Used in Jobandtalent iOS app"
 
   s.description  = <<-DESC
