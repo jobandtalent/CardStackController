@@ -290,7 +290,7 @@ public class CardStackController: UIViewController {
     ///
     /// - Parameter completion: completion block called after unstacking is complete
     public func unstackAllViewControllers(completion: CompletionBlock? = nil) {
-        unstack(viewControllers: viewControllers)
+        unstack(viewControllers: viewControllers, completion: completion)
     }
 
     /// Unstack viewcontrollers until a given viewcontroller is founded.
